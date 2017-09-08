@@ -1,0 +1,21 @@
+<% if @user.is_admin %>
+    <div class="word-form col-md-6 col-md-offset-3">
+        <h1>Please Create the Words</h1>
+        <%= form_for(@word) do |f| %>
+            <%= f.text_field :name %>
+            <%= f.submit %>
+        <% end %>
+    </div>
+<% end %>
+
+
+
+<div class="word-list col-md-8 col-md-offset-2">
+    <h1>Word List</h1>
+    <% @words.each do |word| %>
+    <p><%= word.name %></p>
+    <% end %>
+</div>
+
+
+
